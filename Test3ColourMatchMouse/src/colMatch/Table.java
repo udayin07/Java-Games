@@ -35,7 +35,6 @@ public class Table extends JPanel {
 		setBackground(Color.BLACK);
 		// Initialise the table		
 		// Fill the array by reading in the cards
-		// You will need to add both the card and a duplicate to the grid
 		//Create the cards
 		String[] cardNames = {"1", "2", "3", "4", "5", "6"};
 		 cards = new ArrayList<Card>();
@@ -118,20 +117,6 @@ public class Table extends JPanel {
 	    }
 	}
 
-//	public void shuffle() {
-//		
-//		Random rand = new Random();
-//		
-//		for (int i = 0; i < cards.size(); i++) {
-//			int j = rand.nextInt(i + 1);
-//			
-//			Card temp = cards.get(i);
-//			cards.set(i, cards.get(j));
-//			cards.set(j, temp);
-//			
-//		}
-//	}
-
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		//draw the grid and call the draw method
@@ -154,10 +139,7 @@ public class Table extends JPanel {
 	    }
 	    return true; // All cards are matched and face-up
 	}
-
-	
-	// TODO: Add the required listener classes here }	
-	
+	//Listener classes
 	private class MyKeyListener extends KeyAdapter{
 		@Override
 		public void keyPressed(KeyEvent e) {
@@ -215,16 +197,12 @@ public class Table extends JPanel {
 									
 									firstCard = null;
 									secondCard = null;
-									repaint();
-									
-									
-									
+									repaint();								
 								}
 							});
 							timer.setRepeats(false);
 							timer.start();
-					}
-					
+					}					
 			}
 		}
 	}
