@@ -77,9 +77,7 @@ public class Table extends JPanel {
 		this.secondPlayerScoreTxt.setFont(new Font("SansSerif", Font.BOLD, 18));
 		this.secondPlayerScoreTxt.setHorizontalAlignment(JTextField.CENTER);
 		this.secondPlayerScoreTxt.setText("Second Player: " + playerTwoScore);
-
-		
-		
+	
 		add(firstPlayerScoreTxt, BorderLayout.NORTH);
 		add(secondPlayerScoreTxt, BorderLayout.SOUTH);
 		
@@ -90,8 +88,7 @@ public class Table extends JPanel {
 		setPreferredSize(new Dimension(Card.cardWidth * NUM_COLS + tablePadding, Card.cardHeight * NUM_ROWS
 				+ tablePadding));
 		
-		//add listener
-		
+		//add listener		
 		MouseListener ml = new MyMouseListener();
 		this.addMouseListener(ml);
 		KeyListener kl = new MyKeyListener();
@@ -99,11 +96,8 @@ public class Table extends JPanel {
 		this.addKeyListener(kl);
 		setFocusable(true);
 		requestFocusInWindow();
-		
-		
 		gameOver();
 	}
-	
 	
 	public void shuffle() {
 		// Swap 2 random cards 24 times
